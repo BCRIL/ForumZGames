@@ -1,0 +1,597 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+/* Barra lateral de administrador*/
+.sidebar {
+    position: fixed; /* Posición fija */
+    width: 10%; /* Ancho de la barra lateral */
+    background-color: #02111f; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espacio interno */
+    height: 100%; /* Altura completa de la ventana */
+    position: fixed; /* Fija la barra lateral */
+}
+
+.admin-perfil {
+    display: flex; /* Utiliza flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente */
+}
+
+.imagen-admin {
+    width: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    border: 1px solid #ffffff; /* Agrega un borde a la imagen */
+    border-radius: 30px; /* Bordes redondeados opcionales */
+}
+
+.usr-admin {
+    font-size: 25px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+.separator-sup {
+    margin-top: 120px; /* Ajusta este valor según lo que necesites */
+    border: none; /* Si quieres que sea solo un espacio y no una línea */
+    border-top: 1px solid #ccc; /* Solo si deseas que se vea como una línea */
+}
+
+.separator-inf {
+    margin-bottom: 120px; /* Ajusta este valor según lo que necesites */
+    border: none; /* Si quieres que sea solo un espacio y no una línea */
+    border-top: 1px solid #ccc; /* Solo si deseas que se vea como una línea */
+}
+
+.logo {
+    justify-content: center;
+    margin-bottom: 20px; /* Espacio inferior para separar el logo del menú */
+    position: relative; /* Fija la barra lateral */
+    bottom: 0;
+    padding: 20px; /* Espacio interno */
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto; /* Altura del logo */
+    width: auto; /* Mantener la proporción */
+}
+
+.nav-left, .nav-bottom {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+    font-family: 'Jersey 10', sans-serif;
+}
+
+.nav-left li,
+.nav-bottom li {
+    margin: 15px 0; /* Margen entre los elementos */
+}
+
+.nav-left li a {
+    margin: 15px 0; /* Margen entre los elementos */
+    font-size: 30px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: #61a1ff; /* Color de fondo al pasar el ratón */
+}
+/* Buscador */
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%; /* Espacio entre la barra de navegación y el buscador */
+    background-color: #d9d9d9;
+    padding: 0.5%;
+    margin-left: 200px;
+    margin-right: 70px;
+    border-radius: 10px;
+    height: 40px;
+    width: 80%;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;              /* Ancho del buscador */
+    max-width: 800px;         /* Ancho máximo */
+    padding: 8px;
+    border: 2px solid #d9d9d9;
+    background-color: #FDFDFD;
+    border-radius: 56px;
+}
+
+.search-input {
+    width: 100%;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Jersey 10';
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.search-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* Aumentar tamaño del icono en el botón de búsqueda */
+.search-button i {
+    font-size: 30px; /* Tamaño del icono */
+    color: #d9d9d9; /* Puedes ajustar el color si lo deseas */
+}
+/* Estilo para el contenedor de filtros */
+.filter-select {
+    width: 250px;              /* Ancho de los selectores de filtro */
+    height: 40px;             /* Altura del selector */
+    border: 2px solid #d9d9d9; /* Borde igual que el buscador */
+    border-radius: 30px;      /* Bordes redondeados */
+    padding: 5px;            /* Espacio interno */
+    margin-right: 10px;       /* Espacio entre filtros */
+    background-color: #FDFDFD; /* Color de fondo */
+    font-size: 20px;          /* Tamaño de fuente */
+    font-family: 'Jersey 10'; /* Fuente consistente con la barra */
+    margin-left: 10px;
+}
+
+/* Estilo para el botón de filtro */
+.filter-button {
+    height: 40px;             /* Altura del botón */
+    border: none;             /* Sin borde */
+    border-radius: 30px;      /* Bordes redondeados */
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white;             /* Color de texto blanco */
+    font-size: 16px;          /* Tamaño de fuente */
+    cursor: pointer;          /* Cambia el cursor al pasar */
+    padding: 0 20px;          /* Espacio interno horizontal */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover para el botón de filtro */
+.filter-button:hover {
+    background-color: #45a049; /* Color de fondo al pasar el mouse */
+}
+
+.resultados-container {
+    position: absolute;
+    top: 70px;
+    left: 57%;
+    transform: translateX(-50%);
+    width: 200px; /* Este es el ancho actual de la caja */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-height: 100px;
+    overflow-y: auto;
+}
+.resultado-juego:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilos para la lista de otros juegos */
+.otros-juegos {
+    list-style-type: none;
+    padding: 0;
+    width: 80%; /* Ancho del 80% */
+    margin-left: 210px;
+    margin-top: 20px;
+}
+
+.otros-juegos li {
+    background-color: #110f2d;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex; /* Asegura que la imagen y el texto estén alineados */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+/* Imagen del juego a la izquierda */
+.otros-juegos li .game-image {
+    width: 100px; /* Cambia este valor al tamaño que desees */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 5px; /* Opcional: añade un borde redondeado */
+    margin-right: 15px; /* Espacio entre la imagen y el texto */
+}
+
+/* Estilo del texto a la derecha de la imagen */
+.otros-juegos li .game-details {
+    flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+}
+
+/* Estilo del título e información del juego */
+.otros-juegos li h3 {
+    font-size: 22px;
+    color: white; /* Cambiar el color del título a blanco */
+    margin: 0; /* Asegura que no haya margen adicional */
+}
+
+.otros-juegos li p {
+    font-size: 16px; /* Asegúrate de que el tamaño sea legible */
+    color: white; /* Cambiar el color de la información del juego a blanco */
+    margin: 5px 0; /* Espacio entre los párrafos */
+}
+
+
+/* Sección del juego destacado */
+.highlighted-game {
+    position: relative;
+    width: 86.87%; /* Ancho del 80% */
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto; /* Centrar horizontalmente */
+    margin-top: 20px;
+    margin-left: 166px;
+}
+
+.highlighted-game::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.highlighted-game .game-content {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 600px;
+    margin: 0 20px;
+}
+
+.highlighted-game img.game-image {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.highlighted-game .game-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.highlighted-game .game-details h3 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.highlighted-game .game-details p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.valoracion-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.rating-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px; /* Ajusta el tamaño del círculo */
+    height: 70px; /* Ajusta el tamaño del círculo */
+    border-radius: 50%; /* Hace que sea un círculo */
+    color: white; /* Color del texto dentro del círculo */
+    font-weight: bold; /* Hacer el texto más grueso */
+    margin-left: auto; /* Empuja el círculo hacia la derecha */
+    margin-top: 10px; /* Espaciado superior */
+    font-size: 20px; /* Ajusta el tamaño de la fuente */
+    border: 5px solid rgb(0, 0, 0); /* Añadir borde rosa y grueso */
+    box-sizing: border-box; /* Asegura que el borde no afecte el tamaño total */
+}
+
+.no-juegos {
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 16px; /* Establece el tamaño de fuente a 16px */
+    margin: 10px 0; /* Agrega un margen vertical si lo deseas */
+    text-align: center; /* Centra el texto si es necesario */
+}
+/* Estilos para el modal */
+.modal {
+    position: fixed;
+    display: none; /* Por defecto, el modal está oculto */
+    z-index: 1000; /* Asegúrate de que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    overflow: auto; /* Habilita el desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con opacidad */
+    padding-top: 60px; /* Espacio superior */
+}
+
+.modal-content {
+    background-color: #fff; /* Fondo blanco para el contenido */
+    margin: 5% auto; /* Centro del modal */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #888; /* Borde suave */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 80%; /* Ancho del modal */
+    max-width: 600px; /* Ancho máximo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Estilos para los botones en los modales */
+.modal-button {
+    background-color: #28a745; /* Color del fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Padding interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    margin: 10px; /* Margen entre botones */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+/* Efecto hover para los botones */
+.modal-button:hover {
+    background-color: #02a428; /* Cambiar a rojo al pasar el ratón */
+    transform: scale(1.05); /* Agrandar ligeramente el botón */
+}
+
+
+.close {
+    color: #aaa; /* Color del botón de cierre */
+    float: right; /* Alinea a la derecha */
+    font-size: 28px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Color al pasar el ratón */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cambiar el cursor */
+}
+
+/* Botón Votar */
+.vote-button {
+    background-color: #28a745; /* Verde */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado */
+    text-align: center; /* Centrar texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Hacer que el botón se comporte como un bloque */
+    font-size: 14px; /* Tamaño de la fuente */
+    margin: 4px 2px; /* Margen */
+    cursor: pointer; /* Cambiar cursor */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+    width: 200px;
+}
+
+.vote-button:hover {
+    background-color: #218838; /* Color más oscuro al pasar el ratón */
+}
+
+.vote-button:active {
+    transform: scale(0.95); /* Efecto de pulsado */
+}
+.rating-container {
+    display: flex; /* Muestra los cuadrados en una fila */
+    justify-content: center; /* Centra los cuadrados */
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+.rating-square {
+    width: 60px; /* Ancho del cuadrado */
+    height: 60px; /* Altura del cuadrado */
+    display: flex; /* Para centrar el texto */
+    justify-content: center; /* Centrar el contenido */
+    align-items: center; /* Centrar el contenido */
+    background-color: #e0e0e0; /* Color de fondo por defecto */
+    color: black; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 5px; /* Margen entre los cuadrados */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    font-size: 20px; /* Tamaño de la fuente */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+}
+
+.rating-square:hover {
+    background-color: #c0c0c0; /* Color de fondo al pasar el ratón */
+}
+
+.rating-square.selected {
+    background-color: #4caf50; /* Color de fondo cuando está seleccionado */
+    color: white; /* Texto en blanco cuando está seleccionado */
+}
+
+/* Estilo para la caja de comentarios */
+textarea {
+    width: 95%; /* Hace que la caja ocupe todo el ancho disponible */
+    height: 60px; /* Altura inicial */
+    max-height: 150px; /* Altura máxima */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    resize: vertical; /* Permitir solo el cambio de tamaño vertical */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+/* Cambiar el borde al enfocar */
+textarea:focus {
+    border-color: #4caf50; /* Color del borde al enfocar */
+    outline: none; /* Sin contorno */
+}
+
+/* Estilo para el botón de enviar voto */
+button[type="submit"] {
+    background-color: #4caf50; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+/* Efecto hover para el botón */
+button[type="submit"]:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Levanta un poco el botón */
+}
+
+/* Efecto activo para el botón */
+button[type="submit"]:active {
+    transform: translateY(1px); /* Baja un poco el botón al hacer clic */
+}
+
+/* Paginación */
+.pagination {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    margin-left: 130px;
+}
+
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #ffffff; /* Color del texto por defecto en blanco */
+    padding: 10px 20px; /* Aumentar el tamaño del botón */
+    border-radius: 5px; /* Bordes redondeados para un estilo más suave */
+    background-color: #686868; /* Fondo gris por defecto */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    font-size: 22px; /* Aumentar tamaño de fuente para los números de página */
+    border: 1px solid transparent; /* Borde por defecto transparente */
+}
+
+/* Estado activo */
+.pagination a.active {
+    background-color: #b80101; /* Color granate cuando está activo */
+    color: rgb(255, 255, 255); /* Color del texto cuando está activo */
+    border: 1px solid #b80101; /* Borde granate para el botón activo */
+}
+
+/* Efecto hover */
+.pagination a:hover {
+    background-color: #FF0000; /* Color rojo al pasar el ratón */
+    color: white; /* Color del texto en rojo al pasar el ratón */
+    border: 1px solid #FF0000; /* Borde rojo al pasar el ratón */
+}
+
+/* Estilos específicos para los enlaces de "Anterior" y "Siguiente" */
+.pagination .prev-next {
+    background-color: #023061; /* Color de fondo azul para "Anterior" y "Siguiente" */
+    border: none; /* Eliminar el borde si lo deseas */
+    font-weight: bold; /* Resaltar texto */
+    font-size: 22px; /* Aumentar tamaño de fuente también para "Anterior" y "Siguiente" */
+    padding: 10px 20px; /* Ajustar el padding */
+}
+
+.pagination .prev-next:hover {
+    background-color: #0056b3; /* Color más oscuro de azul al pasar el ratón */
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #021324; /* Color de fondo */
+    width: 84.9%;
+    margin-left: 150px;
+    
+}
+
+.footer-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    position: relative;
+    color: white;
+    font-family: 'Jersey 10', sans-serif;
+    letter-spacing: 3px;
+}
+
+.footer-title::before,
+.footer-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    height: 5px;
+    background-color: rgb(255, 255, 255); /* Color de las líneas */
+}
+
+.footer-title::before {
+    left: 0;
+    margin-right: 10px;
+}
+
+.footer-title::after {
+    right: 0;
+    margin-left: 10px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0px; /* Espacio entre columnas */
+    padding: 20px 0;
+    color: white;
+    font-style: italic;
+}
+
+.footer-column {
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-left: 50px;
+}
+
+.footer-column img {
+    width: 30px; /* Ajusta la imagen al tamaño del contenedor */
+    height: 30px; /* Mantiene la relación de aspecto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.footer-column img:hover {
+    transform: scale(1.2); /* Aumenta ligeramente el tamaño del texto */
+}
+.small-link {
+    transition: transform 0.3s ease; /* Transición suave */
+    display: inline-block; /* Asegúrate de que los enlaces sean bloques en línea */
+    font-size: 14px; /* Ajusta el tamaño de la fuente aquí */
+}
+
+.small-link:hover {
+    transform: scale(1.1); /* Aumenta el tamaño al 110% */
+}

@@ -1,0 +1,314 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Barra lateral de administrador*/
+.sidebar {
+    position: fixed; /* Posición fija */
+    width: 15%; /* Ancho de la barra lateral */
+    background-color: #02111f; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 1%; /* Espacio interno */
+    height: 100%; /* Altura completa de la ventana */
+    position: fixed; /* Fija la barra lateral */
+    z-index: 1000;
+}
+
+.admin-perfil {
+    display: flex; /* Utiliza flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente */
+}
+
+.imagen-admin {
+    width: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    border: 1px solid #ffffff; /* Agrega un borde a la imagen */
+    border-radius: 30px; /* Bordes redondeados opcionales */
+}
+
+.usr-admin {
+    font-size: 25px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+.separator-sup {
+    border: none; /* Si quieres que sea solo un espacio y no una línea */
+    border-top: 1px solid #ccc; /* Solo si deseas que se vea como una línea */
+}
+
+.separator-inf {
+    border: none; /* Si quieres que sea solo un espacio y no una línea */
+    border-top: 1px solid #ccc; /* Solo si deseas que se vea como una línea */
+}
+
+.nav-left, .nav-bottom {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+    font-family: 'Jersey 10', sans-serif;
+}
+
+.nav-left li,
+.nav-bottom li {
+    margin: 15px 0; /* Margen entre los elementos */
+    transition: transform 0.3s ease;
+}
+
+.nav-left li a {
+    margin: 15px 0; /* Margen entre los elementos */
+    font-size: 30px;
+    display: inline-block; /* Hacer que el enlace ocupe todo el ancho */
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    color: #61a1ff; /* Color de fondo al pasar el ratón */
+    transform: scale(0.95);
+}
+
+.logo {
+    justify-content: center;
+    position: relative; /* Fija la barra lateral */
+    bottom: 0;
+    padding: 20px; /* Espacio interno */
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto; /* Altura del logo */
+    width: auto; /* Mantener la proporción */
+}
+
+.no-sidebar {
+    width: 90%;
+    margin-left: 10%;
+}
+
+/* Platform Logos */
+.logo-container {
+    display: flex;
+    justify-content: flex-start; /* Alinea los logos a la izquierda */
+    align-items: center;
+    gap: 15px; /* Espaciado más pequeño entre los logos */
+    position: absolute;
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    right: 20px; /* Ajusta la distancia desde la parte izquierda */
+    margin-top: 100px; /* Asegúrate de que no haya margen superior */
+    z-index: 999; /* Coloca los logos por encima de otros elementos */
+}
+
+.logo-container img {
+    background-color: rgba(255, 255, 255, 0.9); /* Transparencia del 80% */
+    width: 40px; /* Ajusta este valor al tamaño deseado */
+    height: 40px; /* El mismo valor para mantener proporciones uniformes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
+    padding: 5px; /* Margen interno ajustado */
+    border-radius: 8px; /* Bordes redondeados más suaves */
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+}
+
+.logo-container img:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 4px 10px rgb(255, 0, 0); /* Sombra al pasar el mouse */
+}
+
+h1 {
+    color: #333;
+}
+
+.back-button, .logout-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.back-button {
+    background: #3498db; /* Color del botón de volver */
+}
+
+.back-button:hover {
+    background: #2980b9; /* Hover color para el botón de volver */
+}
+
+.logout-button {
+    background: #e74c3c;
+}
+
+.logout-button:hover {
+    background: #c0392b;
+}
+
+
+/* Contenedor principal de perfil */
+.profile-container {
+    text-align: center;
+    margin: 30px auto;
+    width: 80%;
+}
+
+/* Cabecera del perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: #3776ab;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: white;
+    margin-left: 15%;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    border: 4px solid #02111f;
+}
+
+.profile-info h1 {
+    font-size: 40px;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+}
+
+.profile-info p {
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+}
+
+.btn-change-password {
+    background-color: #5b82a7;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-change-password:hover {
+    background-color: #3d6a8a;
+}
+
+/* Secciones del perfil */
+.profile-sections {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+    margin-left: 15%;
+}
+
+.profile-section {
+    text-align: center;
+    width: 30%;
+}
+
+.profile-section img {
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+}
+
+.profile-section h2 {
+    font-size: 20px;
+    background-color: #02111f;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 0;
+    margin-top: 15px;
+    font-family: 'Jersey 10', sans-serif;
+}
+
+/* Estilos para los modales */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Mantenerlo en su lugar */
+    z-index: 10; /* Encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilitar scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semi-transparente */
+}
+
+.modal-content {
+    background-color: #8e8f8f; /* Color de fondo del modal */
+    margin: 10% auto; /* 10% desde el top y centrado */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px; /* Bordes redondeados */
+    width: 80%; /* Ancho */
+    max-width: 400px; /* Ancho máximo */
+    color: rgb(0, 0, 0); /* Color del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.close {
+    color: #e74c3c; /* Color de la 'X' de cerrar */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #c0392b; /* Color al pasar el ratón */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal h2 {
+    font-family: 'Press Start 2P', cursive; /* Tipografía para el título */
+    font-size: 24px; /* Tamaño de fuente */
+    margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+/* Estilos de los inputs en el modal */
+.modal input[type="password"],
+.modal input[type="file"] {
+    width: calc(100% - 20px); /* Ancho total menos márgenes */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espacio entre inputs */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #e9e5e5; /* Color de fondo blanco */
+    color: #333; /* Color de texto */
+}
+
+/* Estilo del botón de submit en los modales */
+.modal button[type="submit"] {
+    background-color: #5b82a7; /* Color del botón */
+    border: none; /* Sin borde */
+    color: rgb(0, 0, 0); /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+.modal button[type="submit"]:hover {
+    background-color: #3d6a8a; /* Color al pasar el ratón */
+}

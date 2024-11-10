@@ -1,0 +1,371 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jersey 10', sans-serif;
+    font-size: 24px;
+    background-color: #ffffff;
+}
+
+/* Barra lateral de administrador*/
+.sidebar {
+    position: fixed; /* Posición fija */
+    width: 10%; /* Ancho de la barra lateral */
+    background-color: #02111f; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 1%; /* Espacio interno */
+    height: 100%; /* Altura completa de la ventana */
+    position: fixed; /* Fija la barra lateral */
+}
+
+.admin-perfil {
+    display: flex; /* Utiliza flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente */
+}
+
+.imagen-admin {
+    width: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    border: 1px solid #ffffff; /* Agrega un borde a la imagen */
+    border-radius: 30px; /* Bordes redondeados opcionales */
+}
+
+.usr-admin {
+    font-size: 25px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+.separator-sup {
+    margin-top: 120px; /* Ajusta este valor según lo que necesites */
+    border: none; /* Si quieres que sea solo un espacio y no una línea */
+    border-top: 1px solid #ccc; /* Solo si deseas que se vea como una línea */
+}
+
+.separator-inf {
+    margin-bottom: 120px; /* Ajusta este valor según lo que necesites */
+    border: none; /* Si quieres que sea solo un espacio y no una línea */
+    border-top: 1px solid #ccc; /* Solo si deseas que se vea como una línea */
+}
+
+.logo {
+    justify-content: center;
+    margin-bottom: 20px; /* Espacio inferior para separar el logo del menú */
+    position: relative; /* Fija la barra lateral */
+    bottom: 0;
+    padding: 20px; /* Espacio interno */
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto; /* Altura del logo */
+    width: auto; /* Mantener la proporción */
+}
+
+.nav-left, .nav-bottom {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+    font-family: 'Jersey 10', sans-serif;
+}
+
+.nav-left li,
+.nav-bottom li {
+    margin: 15px 0; /* Margen entre los elementos */
+    transition: transform 0.3s ease;
+}
+
+.nav-left li a {
+    margin: 15px 0; /* Margen entre los elementos */
+    font-size: 30px;
+    display: inline-block; /* Hacer que el enlace ocupe todo el ancho */
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    color: #61a1ff; /* Color de fondo al pasar el ratón */
+    transform: scale(0.95);
+}
+
+/* Cabecera de pantalla */
+.cabecera {
+    position: absolute;
+    top: 3%;
+    background-color: #021324; /* Fondo azul oscuro */
+    border-radius: 56px; /* Bordes redondeados */
+    padding: 10px 10px; /* Espaciado interno */
+    width: 60%; /* Ancho relativo al contenedor padre */
+    margin-left: 25%;
+    text-align: center; /* Centra el texto */
+    box-shadow: 0px 2px 7.5px rgba(0, 0, 0, 1); /* Sombra para darle profundidad */
+}
+
+.cabecera p {
+    font-family: 'Jersey 10', sans-serif;
+    font-size: 30px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    color: #ffffff; /* Color de texto blanco */
+    margin: 0; /* Elimina el margen por defecto */
+    letter-spacing: 5px; /* Ajusta el valor según lo que desees */
+}
+
+
+/* NOTIFICACIONES */
+
+/* Lista de notificaciones*/
+.notification-list { 
+    display: grid;
+    padding-top: 6%;
+}
+
+.notification-list p { 
+    font-size: 12px;
+    display: block;
+    margin: 5px 5px;
+}
+
+/* Cada notificacoin*/
+.highlighted-notification {
+    display: flex; 
+    position: relative; 
+    background-color: #999999;
+    border: 1px solid;
+    border-radius: 16px;
+    border-color: #02111f;
+    max-width: 80%;
+    height: 90px;
+    margin-left: 15%;
+    margin-top: 10px;
+    padding: 6px;
+}
+
+.texto {
+    margin-top: 0px;
+    margin-left: 2%;
+    font-size: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 69%;
+    height: 80%;
+    overflow: hidden;         /* Oculta el texto que se sale del contenedor */
+    text-overflow: ellipsis;  /* Muestra "..." al final si el texto es demasiado largo */
+    border: 1px solid;
+    border-radius: 8px;
+    border-color: #02111f;
+    padding: 5px;
+    background-color: #c0c0c0;
+}
+
+.usr-perfil {
+    display: flex; /* Utiliza flexbox para alinear elementos */
+    align-items: center; /* Centra verticalmente */
+    width: 7%;
+    padding: 5px;
+}
+
+.usr-perfil a {
+    color: #02111f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.usr-perfil p {
+    margin-top: 10%;
+    margin-left: 5%;
+    font-size: 12px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;         /* Oculta el texto que se sale del contenedor */
+    text-overflow: ellipsis;  /* Muestra "..." al final si el texto es demasiado largo */
+    border: none;
+    padding: 10px;
+    background-color: transparent;
+}
+
+.usr-perfil a:hover {
+    color: #61a1ff; /* Color de fondo al pasar el ratón */
+    transform: scale(0.95);
+}
+
+.imagen-usr {
+    width: 40px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 40px; /* Mantiene la proporción de la imagen */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    border: 1px solid #ffffff; /* Agrega un borde a la imagen */
+    border-radius: 30px; /* Bordes redondeados opcionales */
+}
+
+.usr-name {
+    font-size: 20px; /* Ajusta el tamaño de la fuente según sea necesario */
+}
+
+/* Boton para ver el foro */
+.foro-button {
+    position: relative;
+    width: 8%;
+    height: 20%;
+    justify-content: center;
+    text-align: center;
+    background-color: #215ba7; /* Color del fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: 1px solid;
+    border-color: #02111f;
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 10px; /* Padding interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    margin: 15px; /* Margen entre botones */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+.foro-button:hover {
+    opacity: 0.8;
+}
+
+/* Boton para tomar una decision sobre la denuncia */
+.denuncia-button {
+    position: relative;
+    width: 8%;
+    height: 20%;
+    text-align: center;
+    justify-content: center;
+    background-color: #6721c2; /* Color del fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: 1px solid;
+    border-color: #02111f;
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 10px; /* Padding interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    margin: 15px; /* Margen entre botones */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+.denuncia-button:hover {
+    opacity: 0.8;
+}
+
+/* MODAL */
+
+.modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed; /* Fija la posición */
+    z-index: 100; /* Asegura que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Permite desplazamiento si es necesario */
+    background-color: rgb(0,0,0); /* Color de fondo negro */
+    background-color: rgba(0,0,0,0.4); /* Fondo con opacidad */
+}
+
+.modal-content {
+    background-color: #fefefe; /* Color de fondo del contenido del modal */
+    margin: 15% auto; /* Margen superior e inferior */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #888; /* Borde */
+    border-radius: 8px;
+    width: 80%; /* Ancho del modal */
+    max-width: 400px; /* Ancho máximo */
+    text-align: center;
+}
+
+.close {
+    color: #c90000; /* Color del botón de cerrar */
+    float: right; /* Alinear a la derecha */
+    font-size: 28px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(131, 0, 0); /* Cambia color al pasar el ratón */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+}
+
+.deletebutton {
+    margin-top: 10px; /* Margen superior entre botones */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de la fuente */
+    background-color: #c20000; /* Color del fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia cursor al pasar el ratón */
+}
+
+.deletebutton:hover {
+    background-color: #6e0404; /* Color de fondo al pasar el ratón */
+}
+
+.correctbutton {
+    margin-top: 10px; /* Margen superior entre botones */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de la fuente */
+    background-color: #18ca36; /* Color del fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia cursor al pasar el ratón */
+}
+
+.correctbutton:hover {
+    background-color: #176722; /* Color de fondo al pasar el ratón */
+}
+
+
+/* Paginación */
+.pagination {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 12%;
+}
+
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #ffffff; /* Color del texto por defecto en blanco */
+    padding: 5px 10px; /* Aumentar el tamaño del botón */
+    border-radius: 5px; /* Bordes redondeados para un estilo más suave */
+    background-color: #686868; /* Fondo gris por defecto */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    font-size: 22px; /* Aumentar tamaño de fuente para los números de página */
+    border: 1px solid transparent; /* Borde por defecto transparente */
+}
+
+/* Estado activo */
+.pagination a.active {
+    background-color: #b80101; /* Color granate cuando está activo */
+    color: rgb(255, 255, 255); /* Color del texto cuando está activo */
+    border: 1px solid #b80101; /* Borde granate para el botón activo */
+}
+
+/* Efecto hover */
+.pagination a:hover {
+    background-color: #FF0000; /* Color rojo al pasar el ratón */
+    color: white; /* Color del texto en rojo al pasar el ratón */
+    border: 1px solid #FF0000; /* Borde rojo al pasar el ratón */
+}
+
+/* Estilos específicos para los enlaces de "Anterior" y "Siguiente" */
+.pagination .prev-next {
+    background-color: #023061; /* Color de fondo azul para "Anterior" y "Siguiente" */
+    border: none; /* Eliminar el borde si lo deseas */
+    font-weight: bold; /* Resaltar texto */
+    font-size: 22px; //* Aumentar tamaño de fuente también para "Anterior" y "Siguiente" */
+}
+
+.pagination .prev-next:hover {
+    background-color: #0056b3; /* Color más oscuro de azul al pasar el ratón */
+}
+
+
+/* Uso responsive para otros dispositivos */
