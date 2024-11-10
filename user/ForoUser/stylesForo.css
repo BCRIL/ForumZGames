@@ -1,0 +1,467 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/* Barra de navegación */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #02111f;
+    padding: 15px 40px;
+    height: 50px;
+    font-family: 'Jersey 10', sans-serif;
+    letter-spacing: 3px;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-left li,
+.nav-right li {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.nav-left li {
+    margin-right: 150px;
+    font-size: 45px;
+}
+
+.nav-right li {
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-left li:not(.search-container):hover,
+.nav-right li:hover {
+    transform: scale(0.95);
+}
+
+a:hover {
+    color: #61a1ff;
+}
+
+/* Logo centrado */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+}
+
+/* Buscador */
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    background-color: #d9d9d9;
+    padding: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 10px;
+    height: 40px;
+    position: relative;
+    top: 30px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;              /* Ancho del buscador */
+    max-width: 1600px;         /* Ancho máximo */
+    padding: 10px;
+    border: 2px solid #d9d9d9;
+    background-color: #FDFDFD;
+    border-radius: 56px;
+}
+
+.search-input {
+    width: 100%;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Jersey 10';
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.search-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Aumentar tamaño del icono en el botón de búsqueda */
+.search-button i {
+    font-size: 30px; /* Tamaño del icono */
+    color: #d9d9d9; /* Puedes ajustar el color si lo deseas */
+}
+
+/* Existing styles remain here... */
+
+/* Styles for the search results container and items */
+.resultados-container {
+    position: absolute;
+    top: 100%; /* Position below the search bar */
+    left: 0;
+    width: 100%; /* Full width of the search bar */
+    max-height: 300px; /* Limit the height to allow scrolling */
+    overflow-y: auto; /* Enable scrolling if results exceed max-height */
+    background-color: #ffffff; /* Background color for contrast */
+    border: 1px solid #d9d9d9; /* Border to make it stand out */
+    border-radius: 0 0 8px 8px; /* Rounded corners at the bottom */
+    z-index: 100; /* Ensure it is above other content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.result-item {
+    padding: 10px;
+    font-size: 18px;
+    color: #02111f; /* Text color for readability */
+    border-bottom: 1px solid #d9d9d9; /* Separate items */
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.result-item:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+}
+
+.resultados-container:empty {
+    display: none;
+}
+
+.full-width-line {
+    border: none;              /* Elimina el borde predeterminado */
+    border-top: 6px solid #000000;  /* Estilo de la línea: grosor y color */
+    width: 80%;               /* La línea ocupa el 60% del ancho de la página */
+    margin: 20px auto;        /* Espaciado vertical y centra horizontalmente */
+    margin-top: 60px;
+}
+
+/* Ajuste del botón "Añadir noticia" */
+.anyadir-button {
+    display: flex;
+    background-color: #d9d9d9;
+    border: none;
+    color: #02111f;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Jersey 10';
+    font-size: 30px;
+    align-items: center;
+    cursor: pointer;
+    height: 40px;
+    transition: none;
+    transform: none;
+    position: absolute;
+    right: 3%; 
+    top: 110px; /* Cambiado para alinear con la barra de búsqueda */
+}
+
+.anyadir-button i {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+    font-size: 20px;
+}
+
+/* Separar los foros de la barra de búsqueda */
+.new-list {
+    display: flex;
+    flex-direction: column; /* Alinear verticalmente */
+    gap: 20px;
+    align-items: center; /* Centrar horizontalmente */
+    margin-top: 50px; /* Añadido para que los foros no se solapen con la barra de búsqueda */
+}
+
+.resultados-container {
+    position: absolute;
+    top: 100%; /* Debajo de la barra de búsqueda */
+    left: 0;
+    width: 100%; /* Ancho total de la barra de búsqueda */
+    max-height: 300px; /* Limitar la altura */
+    overflow-y: auto; /* Activar scroll si excede la altura */
+    background-color: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    z-index: 1000; /* Asegura que se muestre encima de otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-result {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-result:hover {
+    background-color: #f0f0f0;
+}
+
+.foro-image-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.result-text {
+    font-size: 16px;
+    color: #333;
+    margin-right: auto;
+}
+
+.result-date {
+    font-size: 14px;
+    color: #888;
+}
+
+.no-results {
+    padding: 10px;
+    color: #666;
+    text-align: center;
+}
+
+
+/* Estilo del elemento de foro */
+.foro-item {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 1000px; /* Ajusta el ancho según tu preferencia */
+    flex-direction: column; /* Cambia la dirección del contenido a columna */
+}
+
+/* Estilo del contenedor de imagen y cuadrado azul */
+.image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo del cuadrado azul */
+.blue-square {
+    width: 400px;
+    height: 240px;
+    border-radius: 16px;
+    background-color: #02111f;
+    margin-right: 20px;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px; 
+    /* Agregar un cursor de puntero para mostrar que es un enlace */
+    cursor: pointer;
+}
+
+
+.blue-square a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    display: block; /* Asegura que el enlace ocupe todo el espacio del cuadrado */
+    width: 100%; /* Ocupa el ancho completo del contenedor padre */
+    height: 100%; /* Ocupa la altura completa del contenedor padre */
+    color: inherit; /* Toma el color de texto definido para el contenedor */
+}
+
+
+/* Estilo del texto dentro del cuadrado azul */
+.texto-cuadro-azul {
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    line-height: 1.5;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo del título dentro del cuadrado azul */
+.titulo-cuadro-azul {
+    font-size: 20px; /* Tamaño más grande para el título */
+    font-weight: bold; /* Negrita para el título */
+}
+
+/* Estilo de la imagen del avatar */
+/* Estilo de la imagen del avatar */
+.avatar-image {
+    width: 100px; /* Hacer el avatar más grande */
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 50%; /* Mueve el avatar verticalmente al centro */
+    transform: translateY(-50%); /* Centra el avatar */
+}
+
+/* Estilo de la imagen del foro */
+.foro-image {
+    width: 500px;
+    height: 300px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 0;
+    margin-left: -60px; /* Ajustar para la superposición */
+}
+
+.foro-link {
+    text-decoration: none;
+    color: inherit; /* Para mantener el color del texto del cuadrado azul */
+    display: block; /* Hacer que el enlace abarque todo el cuadrado azul */
+}
+
+
+/* Estilo de la línea divisora */
+.full-width-line {
+    border: none;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+.foro-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.delete-icon {
+    margin-left: auto; /* Empuja el icono hacia la derecha */
+    padding: 10px;
+}
+
+.icono-basura {
+    width: 30px; /* Tamaño más grande */
+    height: 30px;
+    cursor: pointer;
+}
+
+
+
+/* Estilos para el modal */
+.modal {
+    position: fixed;
+    display: none; /* Por defecto, el modal está oculto */
+    z-index: 1000; /* Asegúrate de que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa toda la altura */
+    overflow: auto; /* Habilita el desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo negro con opacidad */
+    padding-top: 60px; /* Espacio superior */
+}
+
+.modal-content {
+    background-color: #fff; /* Fondo blanco para el contenido */
+    margin: 5% auto; /* Centro del modal */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #888; /* Borde suave */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 80%; /* Ancho del modal */
+    max-width: 600px; /* Ancho máximo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Estilos para los botones en los modales */
+.modal-button {
+    background-color: #28a745; /* Color del fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Padding interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+    margin: 10px; /* Margen entre botones */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+/* Efecto hover para los botones */
+.modal-button:hover {
+    background-color: #02a428; /* Cambiar a rojo al pasar el ratón */
+    transform: scale(1.05); /* Agrandar ligeramente el botón */
+}
+
+
+/* Estilos adicionales (ejemplo para el pie de página y la paginación) */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #02111f;
+    color: white;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #ffffff; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    background-color: #686868; 
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 22px; 
+    border: 1px solid transparent; 
+}
+
+
+.pagination a.active {
+    background-color: #b80101; 
+    color: rgb(255, 255, 255); 
+    border: 1px solid #b80101; 
+}
+
+.pagination a:hover {
+    background-color: #FF0000; 
+    color: white; 
+    border: 1px solid #FF0000; 
+}
+
+
+.pagination .prev-next {
+    background-color: #023061; 
+    border: none;
+    font-weight: bold;
+    font-size: 22px;
+    padding: 10px 20px;
+}
+
+.pagination .prev-next:hover {
+    background-color: #0056b3;
+}

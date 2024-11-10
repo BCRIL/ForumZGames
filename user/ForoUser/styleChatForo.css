@@ -1,0 +1,302 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+/* Navbar */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #02111f;
+    padding: 15px 40px;
+    height: 50px;
+    font-family: 'Jersey 10', sans-serif;
+    letter-spacing: 3px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-left li, .nav-right li {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.nav-left li {
+    margin-right: 150px;
+    font-size: 45px;
+}
+
+.nav-right li {
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #61a1ff;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+}
+
+/* Background and Forum Description */
+.background-container {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+}
+
+
+.forum-description-container {
+    max-width: 1000px; /* Aumenta el ancho máximo */
+    width: 90%; /* Ajusta el ancho relativo */
+    background: rgba(50, 50, 50, 0.7);
+    padding: 30px;
+    border-radius: 20px;
+    color: #e1e1e1;
+    text-align: left;
+}
+
+/* Creator Info in Forum Header */
+.forum-description-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.forum-creator-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #ffffff;
+}
+
+.forum-creator-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.forum-creator-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.forum-creation-date {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+/* Forum Title and Description */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.foro-description p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e1e1e1;
+}
+
+/* Messages Container */
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.message {
+    max-width: 1000px;
+    width: 90%;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.message-left {
+    align-self: flex-start;
+}
+
+.message-right {
+    align-self: flex-end;
+    background: #e9f7ef;
+}
+
+.message-header {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-info {
+    flex-grow: 1;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.message-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.report-button {
+    background: none;
+    border: none;
+    color: #f00;
+    cursor: pointer;
+}
+
+.content p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Input Message Container */
+.message-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+.message-input-container form {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Hace que el formulario ocupe todo el ancho del contenedor */
+    max-width: 1000px; /* Limita el ancho para que no se extienda demasiado en pantallas grandes */
+}
+
+.message-input-container input[type="text"] {
+    flex: 1; /* Permite que el campo de entrada ocupe el mayor espacio posible */
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin-right: 10px; /* Espacio entre el campo de texto y el botón */
+}
+
+.send-button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 24px;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.delete-button {
+    align-self: flex-start;
+    background-color: #61a1ff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.delete-button:hover {
+    background-color: #e04a4a;
+}
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Mantener el modal en posición fija */
+    z-index: 1000; /* Asegúrate de que esté en la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Permitir desplazamiento si es necesario */
+    background-color: rgba(0,0,0,0.4); /* Fondo negro con opacidad */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centrar el modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ajusta el ancho del modal */
+    border-radius: 5px;
+}
+/* Estilo del botón "Eliminar" */
+.delete-confirm-button {
+    background-color: #e60000; /* Rojo intenso */
+    color: white; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.delete-confirm-button:hover {
+    background-color: #cc0000; /* Rojo un poco más oscuro al pasar el ratón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Estilo del botón "Cancelar" */
+.cancel-button {
+    background-color: #d3d3d3; /* Gris claro */
+    color: #333333; /* Texto gris oscuro */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-left: 10px; /* Añadir espacio entre los botones */
+}
+
+.cancel-button:hover {
+    background-color: #bfbfbf; /* Gris ligeramente más oscuro al pasar el ratón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+

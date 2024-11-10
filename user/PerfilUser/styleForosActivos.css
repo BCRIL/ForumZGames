@@ -1,0 +1,302 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333; /* Color de texto principal */
+}
+
+/* Barra de navegación */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #02111f; /* Color de fondo de la barra de navegación */
+    padding: 15px 40px;
+    height: 50px;
+    font-family: 'Jersey 10', sans-serif;
+    letter-spacing: 3px; /* Espaciado entre letras */
+}
+
+/* Contenedores para elementos de navegación a la izquierda y derecha */
+.nav-left,
+.nav-right {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos individuales de los elementos de la barra de navegación */
+.nav-left li,
+.nav-right li {
+    position: relative;
+    transition: transform 0.3s ease; /* Efecto de escala al hacer hover */
+}
+
+.nav-left li {
+    margin-right: 150px;
+    font-size: 45px; /* Tamaño de fuente para elementos de la izquierda */
+}
+
+.nav-right li {
+    margin-left: 30px;
+    font-size: 20px; /* Tamaño de fuente para elementos de la derecha */
+}
+
+a {
+    color: white; /* Color de texto de los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Efecto de escala en los enlaces de la barra de navegación */
+.nav-left li:not(.search-container):hover,
+.nav-right li:hover {
+    transform: scale(0.95);
+}
+
+a:hover {
+    color: #61a1ff; /* Color al pasar el ratón sobre el enlace */
+}
+
+/* Logo centrado */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    height: 80px; /* Altura del logo */
+    width: auto;
+}
+
+/* Contenedor para centrar el título */
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Estilos para el título */
+.title-styled {
+    font-size: 2.5rem;
+    font-family: 'Lobster', cursive;
+    color: #02111f; /* Un azul atractivo */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border-bottom: 3px solid #02111f;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+/* Contenedor principal para la sección de foros activos */
+.foros-activos-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.foros-activos-container h1 {
+    font-size: 36px;
+    color: #02111f;
+    margin-bottom: 30px;
+}
+
+/* Lista de foros activos con diseño en cuadrícula */
+.foros-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre elementos */
+    justify-content: center;
+}
+
+/* Estilos individuales para cada elemento del foro */
+.foro-item {
+    background-color: #f3f3f3;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.foro-item h2 {
+    font-size: 24px;
+    color: #02111f;
+    margin: 0 0 10px;
+}
+
+.foro-item p {
+    color: #555; /* Color del texto de la descripción */
+    margin: 0 0 15px;
+}
+
+/* Enlace a la página del foro */
+.foro-item a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #02111f;
+    color: #ffffff;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.foro-item a:hover {
+    background-color: #61a1ff;
+}
+
+.foro-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Efecto de sombra al hacer hover */
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+/* Botón de cierre del modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Botones con estilos personalizados */
+button {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón para cambiar contraseña */
+.btn-change-password {
+    background-color: #02111f;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.btn-change-password:hover {
+    background-color: #61a1ff;
+}
+
+/* Botón para cerrar sesión */
+.logout-button {
+    background-color: #ff4d4d;
+    color: #ffffff;
+}
+
+.logout-button:hover {
+    background-color: #ff3333;
+}
+
+
+/* Pie de página */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #021324;
+}
+
+.footer-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    position: relative;
+    color: white;
+    font-family: 'Jersey 10', sans-serif;
+    letter-spacing: 3px;
+}
+
+.footer-title::before,
+.footer-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 37%;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.footer-title::before {
+    left: 0;
+    margin-right: 10px;
+}
+
+.footer-title::after {
+    right: 0;
+    margin-left: 10px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 20px 0;
+    color: white;
+    font-style: italic;
+}
+
+.footer-column {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.footer-column img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-column img:hover {
+    transform: scale(1.2);
+}
+
+.small-link {
+    transition: transform 0.3s ease;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.small-link:hover {
+    transform: scale(1.1);
+}

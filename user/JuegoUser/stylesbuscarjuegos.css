@@ -1,0 +1,57 @@
+/* Contenedor general de resultados */
+#resultados-busqueda {
+    width: 100%;
+    max-width: 820px;
+    max-height: 470px;
+    overflow-y: auto; /* Scroll si hay demasiados resultados */
+}
+
+/* Caja para cada resultado de búsqueda */
+.search-result {
+    display: flex; /* Usar flex para alinear elementos */
+    align-items: center; /* Alinear verticalmente */
+    padding: 10px; /* Espaciado interno para la caja */
+    border: 1px solid #ddd; /* Borde opcional para las cajas */
+    border-radius: 5px; /* Esquinas redondeadas opcionales */
+}
+
+.search-result:hover {
+    background-color: #cecece;
+}
+
+/* Imagen del videojuego */
+.game-image {
+    width: 60px; /* Ajusta según el tamaño que desees */
+    height: 70px; /* Ajusta el alto */
+    object-fit: cover; /* Asegura que la imagen no se distorsione */
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+/* Nombre del videojuego */
+.result-text {
+    font-size: 24px; /* Ajusta el tamaño del texto del título si es necesario */
+    font-weight: bold; /* Opción para hacer que el título sea más destacado */
+    margin-right: 20px; /* Espacio entre el título y la valoración */
+    flex-shrink: 0; /* Evita que el título se reduzca */
+}
+.result-rating {
+    font-size: 16px; /* Tamaño de fuente */
+    color: #555; /* Color del texto */
+}
+/* Estilo para cuando no hay resultados */
+.no-results {
+    text-align: center;
+    color: #666;
+    padding: 10px;
+}
+.search-result {
+    display: flex; /* Asegura que la imagen y el texto estén alineados */
+}
+
+.search-link {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit; /* Hace que el texto herede el color del contenedor */
+    display: flex; /* Permite que la imagen y el texto estén en línea */
+    align-items: center; /* Centra verticalmente el contenido */
+}

@@ -1,0 +1,652 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/*Barra de navegación*/
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #02111f;
+    padding: 20px 50px;
+    height: 60px;
+    font-family: 'Jersey 10', sans-serif;
+    letter-spacing: 4px; /* Ajusta el valor según lo que desees */
+}
+
+/*Listas no ordenadas*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-left li,
+.nav-right li {
+    position: relative;
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+.nav-left li {
+    margin-right: 200px;
+}
+
+.nav-right li {
+    margin-left: 200px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.nav-left li:not(.search-container):hover {
+    transform: scale(0.95);
+}
+.nav-right li:hover {
+    transform: scale(0.95);
+}
+
+a:hover {
+    color: #61a1ff;
+}
+
+
+/* Logo Styles */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    height: 104px;
+    width: auto;
+}
+
+/* Platform Logos */
+.logo-container {
+    display: flex;
+    justify-content: flex-start; /* Alinea los logos a la izquierda */
+    align-items: center;
+    gap: 15px; /* Espaciado más pequeño entre los logos */
+    position: absolute;
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    right: 20px; /* Ajusta la distancia desde la parte izquierda */
+    margin-top: 100px; /* Asegúrate de que no haya margen superior */
+    z-index: 999; /* Coloca los logos por encima de otros elementos */
+}
+
+.logo-container img {
+    background-color: rgba(255, 255, 255, 0.9); /* Transparencia del 80% */
+    width: 40px; /* Ajusta este valor al tamaño deseado */
+    height: 40px; /* El mismo valor para mantener proporciones uniformes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.9);
+    padding: 5px; /* Margen interno ajustado */
+    border-radius: 8px; /* Bordes redondeados más suaves */
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+}
+
+.logo-container img:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 4px 10px rgb(255, 0, 0); /* Sombra al pasar el mouse */
+}
+
+/* Sección del GIF de bienvenida */
+.gif-container {
+    width: 100%; /* Ajusta el ancho para dejar espacio para la barra lateral */
+    height: 200px;
+    background-image: url('/ForumZGames/imagenes/images/zFEUEP.gif');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.line1 {
+    font-size: 60px;
+    font-family: 'Monoton', sans-serif; /* Fuente retro Bungee */
+    margin: 0;
+}
+
+.line2 {
+    font-size: 55px;
+    font-family: 'Monoton', sans-serif; /* Fuente retro Bungee */
+    margin: 0;
+}
+
+/* Cabecera principal */
+.cabecera {
+    background-color: #021324; /* Fondo azul oscuro */
+    border-radius: 56px; /* Bordes redondeados */
+    padding: 20px 30px; /* Espaciado interno */
+    width: calc(90% - 60px); /* Ajusta el ancho para dejar espacio para la barra lateral */
+    margin: 30px auto; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto */
+    box-shadow: 0px 2px 7.5px rgba(0, 0, 0, 1); /* Sombra para darle profundidad */
+}
+
+.cabecera p {
+    font-family: 'Jersey 10', sans-serif;
+    font-size: 50px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    color: #ffffff; /* Color de texto blanco */
+    margin: 0; /* Elimina el margen por defecto */
+    letter-spacing: 5px; /* Ajusta el valor según lo que desees */
+}
+
+/* NOTICIAS */
+
+/* Lista de noticias*/
+.new-list { 
+    display: grid; /* Bidimensional */
+    grid-template-columns: repeat(2, 1fr); /* 3 columnas de igual tamaño */
+    gap: 50px; 
+}
+
+/* Cada noticia*/
+.highlighted-new {
+    position: relative; 
+    margin: 2% 10%; /* Margen superior e inferior */
+    height: 210px; /* Altura fija para las noticias */
+}
+
+/* Caja trasera*/
+.background-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #02111f; 
+    z-index: 1; 
+    border-radius: 8px;
+}
+ /* Caja delantera con imagen*/
+.foreground-box {
+    position: relative; /* Para asegurarnos de que el contenido esté por delante */
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 10px;
+    z-index: 2; 
+    display: block; /* Hace que el enlace ocupe el espacio completo */
+}
+
+.new-image {
+    width: 100%; 
+    height: 210px; 
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    border-radius: 8px;
+}
+
+.titulo-noticia {
+    position: absolute;
+    bottom: -2px; /* Coloca el pie de noticia en la parte inferior de la imagen */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px;
+    text-align: justify;
+    box-sizing: border-box;
+    z-index: 2;
+    border-radius: 0 0 8px 8px; /* Radio para cada esquina */
+    margin-bottom: 0.5%;
+}
+
+/* Efecto hover para aumentar la imagen cuando se pase por el pie de noticia */
+.noticia-link:hover img, 
+.titulo-noticia:hover + img {
+    transform: scale(1.1); /* Escala la imagen cuando el ratón pasa por encima */
+}
+
+
+/* Sección de favoritos del público */
+.FavoritosdelPublico {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    gap: 2px; /* Espacio entre las tarjetas, reducido a 2px */
+    padding: 20px;
+    width: calc(90% - 40px); /* Ajusta el ancho para dejar espacio para la barra lateral */
+    margin: auto;
+}
+
+.topjuego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease; /* Transición para el hover */
+}
+
+.juego-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.topjuego img {
+    width: 200px; /* Tamaño fijo para las imágenes */
+    height: 200px; /* Asegura que las imágenes sean cuadradas */
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+    border-radius: 8px;
+    transition: transform 0.3s ease; /* Efecto de hover para el zoom */
+}
+
+.juego-link:hover img {
+    transform: scale(1.1); /* Zoom al hacer hover en la imagen */
+}
+
+.titulo-juego {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.5;
+    padding: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición para el hover en el título */
+}
+
+.juego-link:hover .titulo-juego {
+    color: #61a1ff; /* Cambia el color del texto al hacer hover */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del texto */
+}
+
+/* Explicacion */
+.Explicacion {
+    background-color: #021324;
+    border-radius: 15px;
+    padding: 10px 15px;
+    width: 80%;
+    margin: 50px auto;
+    box-shadow: 0px 2px 7.5px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    position: center; /* Permite que el bloque se mantenga visible */
+    bottom: 0; /* Posición al fondo */
+    z-index: 2000;
+}
+
+.Explicacion p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.Explicacion p strong {
+    color: #3a72aa;
+    font-weight: bold;
+}
+
+/* Pie de pagina */
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #021324; /* Color de fondo */
+}
+
+.footer-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    position: relative;
+    color: white;
+    font-family: 'Jersey 10', sans-serif;
+    letter-spacing: 3px;
+}
+
+.footer-title::before,
+.footer-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 5px;
+    background-color: rgb(255, 255, 255); /* Color de las líneas */
+}
+
+.footer-title::before {
+    left: 0;
+    margin-right: 10px;
+}
+
+.footer-title::after {
+    right: 0;
+    margin-left: 10px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0px; /* Espacio entre columnas */
+    padding: 20px 0;
+    color: white;
+    font-style: italic;
+}
+
+.footer-column {
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin-left: 50px;
+}
+
+.footer-column img {
+    width: 30px; /* Ajusta la imagen al tamaño del contenedor */
+    height: 30px; /* Mantiene la relación de aspecto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.footer-column img:hover {
+    transform: scale(1.2); /* Aumenta ligeramente el tamaño del texto */
+}
+.small-link {
+    transition: transform 0.3s ease; /* Transición suave */
+    display: inline-block; /* Asegúrate de que los enlaces sean bloques en línea */
+    font-size: 14px; /* Ajusta el tamaño de la fuente aquí */
+}
+
+.small-link:hover {
+    transform: scale(1.1); /* Aumenta el tamaño al 110% */
+}
+
+
+/* Responsive Styles for Small Devices */
+
+@media screen and (max-width:768px){
+    .nav-bar {
+        padding: 5px 10px;
+        letter-spacing: 3px;
+    }
+
+    .nav-left li {
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+
+    .nav-right li {
+        margin-left: 10px; 
+    }
+
+    .logo img {
+        height: 50px; /* Ajusta el tamaño del logo */
+    }
+    a {
+        font-size: 16px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        top: 5px;
+        right: 10px;
+        margin-top: 50px;
+        gap: 3px;
+    }
+
+    .logo-container img {
+        width: 25px;
+        height: 25px;
+        padding: 2px;
+    }
+
+    .new-list {
+        grid-template-columns: 1fr;
+        width: calc(100% - 20px); /* Añade un pequeño margen a ambos lados */
+        margin: 0 auto;
+    }
+
+    .highlighted-new {
+        margin: 10px;
+        width: calc(100% - 20px);
+    }
+
+    .noticia img {
+        height: auto;
+        width: 100%;
+    }
+
+    .FavoritosdelPublico {
+        grid-template-columns: 1fr 1fr; /* Columna de 2 para centrar mejor */
+        gap: 10px;
+        justify-items: center;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .topjuego img {
+        width: 120px; /* Tamaño más pequeño para las imágenes de los juegos */
+        height: 120px;
+    }
+
+    .footer-title::before,
+    .footer-title::after {
+        width: 20%;
+        height: 3px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-column {
+        text-align: center;
+        margin-right: 60px;
+    }
+    
+    .footer-column img {
+        width: 30px;
+        height: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .dropdown-content {
+        width: 160px;
+        padding: 0;
+    }
+
+    .dropdown-content a {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .dropdown-content-sublist {
+        display: none;
+        flex-wrap: wrap;
+        width: 240px;
+        padding: 5px;
+        column-count: 1;
+        margin-left: 0;
+    }
+    
+    .dropdown-content-sublist a {
+        font-size: 16px;
+        padding: 5px;
+        width: 50%;
+    }
+
+    .search-container {
+        justify-content: left;
+        padding: 2px;
+    }
+    
+    .search-input { 
+        padding: 5px;
+        font-size: 14px;
+        width: 80px;
+    }
+    
+    .search-button {
+        padding: 2px 4px;
+        width: 80px;
+        font-size: 10px;
+    }
+
+    .line1 {
+        font-size: 35px;
+        font-family: 'Monoton', sans-serif;
+        margin: 0;
+    }
+    
+    .line2 {
+        font-size: 30px;
+        font-family: 'Monoton', sans-serif;
+        margin: 0;
+    }
+}
+
+/* Responsive Styles for Medium Devices */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .nav-bar {
+        padding: 10px 20px;
+        letter-spacing: 3px;
+    }
+
+    .nav-left li {
+        margin-right: 15px;
+    }
+
+    .nav-right li {
+        margin-left: 15px; 
+    }
+
+    .logo img {
+        height: 80px;
+    }
+    a {
+        font-size: 18px;
+    }
+
+    .logo-container {
+        top: 10px;
+        right: 20px;
+        margin-top: 60px;
+    }
+
+    .logo-container img {
+        width: 30px;
+        height: 30px;
+        padding: 3px;
+    }
+
+    .new-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .highlighted-new {
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .FavoritosdelPublico {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-column {
+        text-align: left;
+        margin-right: 20px;
+    }
+
+    .footer-title::before,
+    .footer-title::after {
+        width: 30%;
+        height: 3px;
+    }
+
+
+    .line1 {
+        font-size: 40px;
+    }
+    
+    .line2 {
+        font-size: 35px;
+    }
+}
+
+/* Responsive Styles for Large Devices */
+
+@media screen and (min-width: 1025px) {
+    .nav-bar {
+        padding: 20px 50px;
+        letter-spacing: 4px;
+    }
+
+    .nav-left li {
+        margin-right: 20px;
+    }
+
+    .nav-right li {
+        margin-left: 20px; 
+    }
+
+    .logo img {
+        height: 100px;
+    }
+    a {
+        font-size: 20px;
+    }
+
+    .logo-container {
+        flex-direction: row;
+        top: 10px;
+        right: 30px;
+    }
+
+    .logo-container img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .new-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .highlighted-new {
+        margin: 30px;
+        width: calc(100% - 60px);
+    }
+
+    .FavoritosdelPublico {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-column {
+        text-align: left;
+        margin-right: 30px;
+    }
+    
+    .footer-title::before,
+    .footer-title::after {
+        width: 35%;
+        height: 3px;
+    }
+
+    .line1 {
+        font-size: 50px;
+    }
+    
+    .line2 {
+        font-size: 45px;
+    }
+}

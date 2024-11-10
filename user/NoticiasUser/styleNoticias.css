@@ -1,0 +1,352 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/* Barra de navegación */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #02111f;
+    padding: 15px 40px; /* Reduce el padding */
+    height: 50px; /* Reduce la altura */
+    font-family: 'Jersey 10', sans-serif;
+    letter-spacing: 3px; /* Reduce el espacio entre letras */
+}
+
+/* Si deseas mantener los estilos de las otras listas (como la cabecera) en horizontal, puedes dejarlas como están */
+.nav-left,
+.nav-right {
+    display: flex; /* Mantenemos el estilo en horizontal para la navegación */
+    list-style-type: none; /* Esto no afectará a .otros-juegos */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-left li,
+.nav-right li {
+    position: relative;
+    transition: transform 0.3s ease;
+    z-index: 1001;
+}
+
+.nav-left li {
+    margin-right: 150px; /* Reduce el margen */
+    font-size: 45px; /* Reduce el tamaño de fuente */
+}
+
+.nav-right li {
+    margin-left: 30px; /* Reduce el margen */
+    font-size: 20px; /* Reduce el tamaño de fuente */
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    color: #61a1ff;
+    transform: scale(0.95);
+}
+
+.nav-left li:not(.search-container):hover {
+    transform: scale(0.95);
+}
+
+.nav-right li:hover {
+    transform: scale(0.95);
+}
+
+/* Logo centrado */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    height: 80px; /* Reduce la altura del logo */
+    width: auto;
+}
+
+/* Buscador */
+.search-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%; /* Espacio entre la barra de navegación y el buscador */
+    background-color: #d9d9d9;
+    padding: 0.5%;
+    margin-left: 4%;
+    margin-right: 70px;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;              /* Ancho del buscador */
+    max-width: 1600px;         /* Ancho máximo */
+    padding: 10px;
+    border: 2px solid #d9d9d9;
+    background-color: #FDFDFD;
+    border-radius: 56px;
+}
+
+.search-input {
+    width: 100%;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Jersey 10';
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.search-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Aumentar tamaño del icono en el botón de búsqueda */
+.search-button i {
+    font-size: 30px; /* Tamaño del icono */
+    color: #d9d9d9; /* Puedes ajustar el color si lo deseas */
+}
+
+.full-width-line {
+    border: none;              /* Elimina el borde predeterminado */
+    border-top: 6px solid #000000;  /* Estilo de la línea: grosor y color */
+    width: 80%;               /* La línea ocupa el 60% del ancho de la página */
+    margin: 20px auto;        /* Espaciado vertical y centra horizontalmente */
+    margin-top: 60px;
+}
+
+/* Resultados busqueda */
+.resultados-container {
+    position: absolute;
+    top: 17%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px; /* Este es el ancho actual de la caja */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Estilo para cada resultado de juego */
+.resultado-noticia {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    display: block; /* Asegura que cada uno esté en su propia fila */
+    width: 100%;
+}
+
+.resultado-noticia:hover {
+    background-color: #f0f0f0;
+}
+
+/* NOTICIAS */
+
+/* Lista de noticias*/
+.new-list { 
+    display: grid; /* Bidimensional */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 50px; 
+}
+
+/* Cada noticia*/
+.highlighted-new {
+    position: relative; 
+    margin: 20px 20px; /* Margen superior e inferior */
+    height: 210px; /* Altura fija para las noticias */
+}
+
+/* Caja trasera*/
+.background-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #02111f; 
+    z-index: 1; 
+    border-radius: 8px;
+}
+ /* Caja delantera con imagen*/
+.foreground-box {
+    position: relative; /* Para asegurarnos de que el contenido esté por delante */
+    width: 100%;
+    height: 100%;
+    top: 10px;
+    left: 10px;
+    z-index: 2; 
+    display: block; /* Hace que el enlace ocupe el espacio completo */
+}
+
+.new-image {
+    width: 100%; 
+    height: 210px; 
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    border-radius: 8px;
+}
+
+.titulo-noticia {
+    position: absolute;
+    bottom: -2px; /* Coloca el pie de noticia en la parte inferior de la imagen */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px;
+    text-align: justify;
+    box-sizing: border-box;
+    z-index: 2;
+    border-radius: 0 0 8px 8px; /* Radio para cada esquina */
+    margin-bottom: 0.5%;
+}
+
+/* Efecto hover para aumentar la imagen cuando se pase por el pie de noticia */
+.noticia-link:hover img, 
+.titulo-noticia:hover + img {
+    transform: scale(1.1); /* Escala la imagen cuando el ratón pasa por encima */
+}
+
+
+
+/* Paginación */
+.pagination {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #ffffff; /* Color del texto por defecto en blanco */
+    padding: 5px 10px; /* Aumentar el tamaño del botón */
+    border-radius: 5px; /* Bordes redondeados para un estilo más suave */
+    background-color: #686868; /* Fondo gris por defecto */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+    font-size: 22px; /* Aumentar tamaño de fuente para los números de página */
+    border: 1px solid transparent; /* Borde por defecto transparente */
+}
+
+/* Estado activo */
+.pagination a.active {
+    background-color: #b80101; /* Color granate cuando está activo */
+    color: rgb(255, 255, 255); /* Color del texto cuando está activo */
+    border: 1px solid #b80101; /* Borde granate para el botón activo */
+}
+
+/* Efecto hover */
+.pagination a:hover {
+    background-color: #FF0000; /* Color rojo al pasar el ratón */
+    color: white; /* Color del texto en rojo al pasar el ratón */
+    border: 1px solid #FF0000; /* Borde rojo al pasar el ratón */
+}
+
+/* Estilos específicos para los enlaces de "Anterior" y "Siguiente" */
+.pagination .prev-next {
+    background-color: #023061; /* Color de fondo azul para "Anterior" y "Siguiente" */
+    border: none; /* Eliminar el borde si lo deseas */
+    font-weight: bold; /* Resaltar texto */
+    font-size: 22px; //* Aumentar tamaño de fuente también para "Anterior" y "Siguiente" */
+}
+
+.pagination .prev-next:hover {
+    background-color: #0056b3; /* Color más oscuro de azul al pasar el ratón */
+}
+
+
+/* Pie de página */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #021324;
+}
+
+.footer-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    position: relative;
+    color: white;
+    font-family: 'Jersey 10', sans-serif;
+    letter-spacing: 3px;
+}
+
+.footer-title::before,
+.footer-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 37%;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.footer-title::before {
+    left: 0;
+    margin-right: 10px;
+}
+
+.footer-title::after {
+    right: 0;
+    margin-left: 10px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 20px 0;
+    color: white;
+    font-style: italic;
+}
+
+.footer-column {
+    text-align: left;
+    margin-left: 50px;
+}
+
+.footer-column img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-column img:hover {
+    transform: scale(1.2);
+}
+
+.small-link {
+    transition: transform 0.3s ease;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.small-link:hover {
+    transform: scale(1.1);
+}
+
+
+/* Uso responsive para otros dispositivos */
